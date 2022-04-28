@@ -1,5 +1,5 @@
 // Actions
-
+import { nanoid } from "nanoid";
 export const ADD_TODO = "ADD_TODO";
 export const DEL_TODO = "DEL_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
@@ -10,7 +10,7 @@ export const TOGGLE_TODO = "TOGGLE_TODO";
 const addTodo = (title) => {
     return {
         type: ADD_TODO,
-        payload:{title}
+        payload:{title,status:false,id:nanoid(4)}
     };
 }
 

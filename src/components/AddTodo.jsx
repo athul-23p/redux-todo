@@ -1,5 +1,5 @@
 import { PlusOutlined } from "@ant-design/icons";
-import { Button, Input, Space } from "antd";
+import { Button, Col, Input, Row, Space } from "antd";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addTodo } from "../Redux/actions";
@@ -13,20 +13,26 @@ function AddTodo() {
   };
 
   return (
-    <div>
-      <Space>
+    <Row
+      justify="center"
+      align="middle"
+      style={{ width: "100%" }}
+    >
+      <Col span={18}>
         <Input placeholder="add todo .." onChange={handleChange} />
+      </Col>
+      <Col span={2}>
         <Button
           type="primary"
           icon={<PlusOutlined />}
-          size="small"
+          size="middle"
           onClick={() => {
-            if(text ==="") return;
-            dispatch(addTodo({ title: text }));
+            if (text === "") return;
+            dispatch(addTodo(text));
           }}
         />
-      </Space>
-    </div>
+      </Col>
+    </Row>
   );
 }
 
