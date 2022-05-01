@@ -1,9 +1,9 @@
-import { ADD_TODO, DEL_TODO, TOGGLE_TODO } from "./actions";
+import { ADD_TODOS, DEL_TODO, TOGGLE_TODO } from "./actions";
 
-export const todoReducer = (store, { type, payload }) => {
+export const todoReducer = (store = {todos:[]}, { type, payload }) => {
   switch (type) {
-    case ADD_TODO:
-      return { ...store, todos: [...store.todos, payload] };
+    case ADD_TODOS:
+      return { ...store, todos:payload };
     case DEL_TODO:
       return {
         ...store,

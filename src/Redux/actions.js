@@ -1,16 +1,16 @@
 // Actions
-import { nanoid } from "nanoid";
-export const ADD_TODO = "ADD_TODO";
+
+export const ADD_TODOS = "ADD_TODOS";
 export const DEL_TODO = "DEL_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 
 
 // Action creators
 
-const addTodo = (title) => {
+const addTodos = (data) => {
     return {
-        type: ADD_TODO,
-        payload:{title,status:false,id:nanoid(4)}
+        type: ADD_TODOS,
+        payload:data
     };
 }
 
@@ -28,4 +28,4 @@ const toggleTodo = (id) => {
     }
 }
 
-export {addTodo,deleteTodo,toggleTodo};
+export {addTodos,deleteTodo,toggleTodo};

@@ -1,10 +1,17 @@
-import { Col, Row } from "antd";
+import { Col } from "antd";
+import { Link } from "react-router-dom";
 
 function TodoItem({ todo }) {
+  const link = `/todos/${todo.id}`
   return (
-    <Row gutter={[12,0]} style={{textAlign:"center",border:"1px solid lightgrey",margin:"5px",borderRadius:"2px"}}>
-      <Col span={24}>{todo.title}</Col>
-    </Row>
+    <Col span={20}>
+      <Link to={link} style={{ textDecoration: "none" }}>
+        <div style={{display:"flex",justifyContent:"space-between"}}>
+          <p>{todo.title}</p>
+          <p>{todo.complete ? "Completed" : "Pending"}</p>
+        </div>
+      </Link>
+    </Col>
   );
 }
 

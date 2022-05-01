@@ -1,8 +1,10 @@
 import "./App.css";
-import { Button, Layout } from "antd";
-import AddTodo from "./components/AddTodo";
+import { Layout } from "antd";
 import Todos from "./components/Todos";
 import { Content, Header } from "antd/lib/layout/layout";
+import {Routes,Route} from 'react-router-dom';
+import Todo from "./components/Todo";
+
 function App() {
   return (
     <div className="App">
@@ -11,7 +13,11 @@ function App() {
           <h1>Todo App</h1>
         </Header>
         <Content>
-          <Todos />
+          <Routes>
+            <Route path="/" element={<Todos/>}/>
+            <Route path="/todos/:id" element={<Todo/>} /> 
+          </Routes>
+       
         </Content>
       </Layout>
     </div>
